@@ -38,24 +38,16 @@ int main(int argc, char* argv[]) {
 
         if(option == 1) {
 
-            string askAnother = "Y";
-
-            while(askAnother == "Y") {
-
-                cout << "Front of card: " << endl;
-                cin.ignore();
-                cin >> front;
-                cout << "Back of card: " << endl;
-                cin.ignore();
-                cin >> back;
-                test.addCard(front, back);
-                cout << "Successfully added. Add another? (Y or N)" << endl;
-                cin >> askAnother;
-
-            }
+            cout << "Front of card: " << endl;
+            cin.ignore();
+            getline(cin, front);
+            cout << "Back of card: " << endl;
+            getline(cin, back);
+            test.addCard(front, back);
 
         } else if(option == 2) {
 
+            test.uploadCards();
 
         } else if(option == 3) {
 
@@ -90,7 +82,7 @@ int main(int argc, char* argv[]) {
 int displayMenu() {
 
     cout << "*** MENU ***" << endl;
-    cout << "1. Add cards" << endl;
+    cout << "1. Add card" << endl;
     cout << "2. Upload cards" << endl;
     cout << "3. Find card" << endl;
     cout << "4. Print all cards" << endl;

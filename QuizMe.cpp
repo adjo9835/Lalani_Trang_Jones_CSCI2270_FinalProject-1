@@ -1,5 +1,6 @@
 #include "QuizMe.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 QuizMe::QuizMe() {
@@ -43,7 +44,7 @@ void QuizMe::addCard(string key, string definition) {
     card -> next = NULL;
     current -> next = card;
     card -> previous = current;
-    
+
 }
 
 void QuizMe::printAll() {
@@ -56,5 +57,25 @@ void QuizMe::printAll() {
         current = current -> next;
 
     }
+
+}
+
+void QuizMe::uploadCards() {
+
+    current = head -> next;
+
+    ofstream file;
+    file.open ("quizcards.txt");
+
+    while(current != NULL) {
+
+        file << current -> key;
+        file << ",";
+        file << current -> definition << "\n";
+        current = current -> next;
+
+    }
+
+    file.close();
 
 }
