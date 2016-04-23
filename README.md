@@ -19,10 +19,10 @@ g++ -std=c++11 Main.cpp QuizMe.cpp
 ```
 
 ## Group	Members
-Faisal Lalani
-Phi Trang
-Adam Jones
+Faisal Lalani <br />
+Phi Trang <br />
+Adam Jones <br />
 
-### Contributors
+## Contributors
 
-### Open	issues/bugs
+## Open	Issues/Bugs
