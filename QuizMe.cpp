@@ -79,3 +79,34 @@ void QuizMe::uploadCards() {
     file.close();
 
 }
+
+void *QuizMe::findCard(string key){
+    FlashCard *ptr = head;
+    bool found = false;
+    while (ptr != NULL){
+        if (ptr->key==key){
+            cout << "Back of card: " << endl;
+            cout << ptr->definition << endl;
+            found = true;
+        }
+        ptr = ptr->next;
+    }
+    if (!found){
+        cout << "Card not found" << endl;
+    }
+}
+
+void QuizMe::editCard(string key,string newkey, string newdef){
+    //deleteCard(key);
+    addCard(newkey,newdef);
+}
+
+void QuizMe::total(){
+    int counter = 0;
+    FlashCard *ptr = head;
+    while (ptr != NULL){
+        counter++;
+        ptr=ptr->next;
+    }
+    cout << "Total number of cards: " << counter << endl;
+}
